@@ -10,12 +10,6 @@ Adds Yandex SpeechKit as a TTS provider, enabling voice replies in Telegram, Tal
 openclaw plugins install openclaw-yandex-speechkit
 ```
 
-Or install manually and register in your config:
-
-```bash
-npm install openclaw-yandex-speechkit
-```
-
 ## Configuration
 
 Set your Yandex Cloud credentials:
@@ -30,8 +24,10 @@ Then configure TTS in `openclaw.json`:
 
 ```json5
 {
-  "tts": {
-    "provider": "yandex"
+  "messages": {
+    "tts": {
+      "provider": "yandex"
+    }
   },
   "plugins": {
     "entries": {
@@ -120,25 +116,6 @@ cd openclaw-yandex-speechkit
 npm install
 npm run build
 npm test
-```
-
-### Local development with OpenClaw
-
-Install as a path-based plugin:
-
-```json5
-// .openclaw/config/plugins.json5
-{
-  "entries": {
-    "yandex-speechkit": { "enabled": true }
-  },
-  "installs": {
-    "yandex-speechkit": {
-      "source": "path",
-      "installPath": "/path/to/openclaw-yandex-speechkit"
-    }
-  }
-}
 ```
 
 ## License
