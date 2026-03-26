@@ -1,0 +1,50 @@
+{
+  "id": "openclaw-yandex-speechkit",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "apiKey": {
+        "type": "string",
+        "description": "Yandex Cloud API key or IAM token. Falls back to YANDEX_API_KEY / YANDEX_IAM_TOKEN env vars."
+      },
+      "folderId": {
+        "type": "string",
+        "description": "Yandex Cloud folder ID. Required for IAM token auth. Falls back to YANDEX_FOLDER_ID env var."
+      },
+      "voice": {
+        "type": "string",
+        "description": "Voice name (e.g. alexander, marina, john). Default: ermil.",
+        "default": "ermil"
+      },
+      "lang": {
+        "type": "string",
+        "description": "Language code (e.g. ru-RU, en-US, kk-KK). Default: ru-RU.",
+        "default": "ru-RU"
+      },
+      "role": {
+        "type": "string",
+        "description": "Voice role / emotion: neutral, good, evil, friendly, strict, whisper.",
+        "enum": ["neutral", "good", "evil", "friendly", "strict", "whisper"]
+      },
+      "speed": {
+        "type": "number",
+        "description": "Speaking speed (0.1 - 3.0). Default: 1.0.",
+        "minimum": 0.1,
+        "maximum": 3.0,
+        "default": 1.0
+      },
+      "format": {
+        "type": "string",
+        "description": "Audio output format. Default: oggopus (ideal for Telegram voice bubbles).",
+        "enum": ["oggopus", "mp3", "wav"],
+        "default": "oggopus"
+      },
+      "authType": {
+        "type": "string",
+        "description": "Auth mode. Auto-detected from token prefix if not set.",
+        "enum": ["apiKey", "iamToken"]
+      }
+    }
+  }
+}
