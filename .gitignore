@@ -5,3 +5,6 @@ coverage/
 .vitest/
 *.log
 .DS_Store
+
+# Internal design docs — not versioned here (kept locally / in archive)
+docs/
